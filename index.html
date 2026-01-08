@@ -16,7 +16,418 @@
   <meta name="twitter:card" content="summary_large_image" />
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <style>
+:root{
+  --bg:#ffffff;
+  --muted:#6b7280;
+  --ink:#0b2540;
+  --accent:linear-gradient(90deg,#0b4fb0,#2b7be6);
+  --card:#f7f8fa;
+  --max:1280px;
+  --radius:12px;
+  font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+}
+
+*{box-sizing:border-box}
+
+html,body{height:100%}
+
+body{
+  margin:0;
+  color:var(--ink);
+  background:var(--bg);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.55;
+  scroll-behavior:smooth;
+}
+
+.container{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:40px 28px;
+}
+
+/* ================= HEADER ================= */
+
+.site-header{
+  position:sticky;
+  top:0;
+  background:rgba(255,255,255,.86);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid #eef1f4;
+  z-index:40;
+}
+
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.brand-name{
+  font-weight:700;
+  font-size:18px;
+}
+
+.nav{
+  display:flex;
+  gap:30px;
+  align-items:center;
+}
+
+.nav a{
+  color:var(--muted);
+  text-decoration:none;
+  font-weight:600;
+  font-size:14px;
+}
+
+.nav a.cta{
+  background:var(--ink);
+  color:#fff;
+  padding:10px 18px;
+  border-radius:999px;
+  font-weight:700;
+}
+
+.mobile-toggle{
+  display:none;
+  background:none;
+  border:0;
+  padding:8px;
+  cursor:pointer;
+}
+
+.mobile-toggle span{
+  display:block;
+  width:22px;
+  height:2px;
+  background:var(--ink);
+  margin:4px 0;
+  border-radius:2px;
+}
+
+/* ================= HERO ================= */
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:64px;
+  align-items:center;
+}
+
+.hero-left{max-width:560px}
+
+.accent-line{
+  width:40px;
+  height:4px;
+  background:var(--accent);
+  margin-bottom:20px;
+  border-radius:3px;
+}
+
+.hero-left h1{
+  font-size:38px;
+  margin:0 0 14px;
+  font-weight:800;
+  letter-spacing:-.02em;
+}
+
+.lede{
+  color:var(--muted);
+  font-size:18px;
+  margin-bottom:22px;
+}
+
+.btn-primary{
+  display:inline-block;
+  background:var(--ink);
+  color:#fff;
+  padding:13px 20px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:700;
+}
+
+.hero-images{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+.hero-images img{
+  width:100%;
+  aspect-ratio:4/3;
+  object-fit:cover;
+  border-radius:12px;
+  box-shadow:0 18px 40px rgba(11,37,64,.06);
+}
+
+/* ================= SECTIONS ================= */
+
+.section{padding:56px 0}
+
+.two-col{
+  display:grid;
+  grid-template-columns:1fr 420px;
+  gap:64px;
+  align-items:start;
+}
+
+.two-col h2{
+  font-size:24px;
+  margin-bottom:16px;
+}
+
+.muted-line{
+  display:block;
+  color:var(--muted);
+  font-weight:600;
+  margin-top:6px;
+}
+
+.steps{
+  margin:20px 0 0;
+  padding-left:20px;
+  color:var(--muted);
+}
+
+.steps li{
+  margin-bottom:14px;
+  font-size:16px;
+}
+
+/* ================= IMAGE GRID ================= */
+
+.image-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+
+.image-grid img{
+  width:100%;
+  aspect-ratio:16/9;
+  object-fit:cover;
+  border-radius:12px;
+}
+
+/* ================= BENEFITS ================= */
+
+.light-bg{background:#fbfcfe}
+
+.section-title{
+  font-size:22px;
+  margin-bottom:26px;
+  font-weight:700;
+}
+
+.benefits-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+
+.bento{
+  background:var(--card);
+  padding:24px;
+  border-radius:14px;
+  box-shadow:0 6px 18px rgba(11,37,64,.04);
+}
+
+.bento h4{
+  margin:0 0 10px;
+  font-size:16px;
+}
+
+/* ================= PROCESS SECTION ================= */
+
+.process-section{
+  background:#0b2540;
+  color:#fff;
+  padding:70px 0;
+}
+
+.process-header{
+  text-align:center;
+  max-width:680px;
+  margin:0 auto 50px;
+}
+
+.process-header h3{
+  font-size:32px;
+  margin:0 0 16px;
+  font-weight:800;
+  letter-spacing:-.02em;
+}
+
+.process-header p{
+  color:rgba(255,255,255,.75);
+  font-size:18px;
+  margin:0;
+}
+
+.process-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:28px;
+  margin-top:40px;
+}
+
+.process-card{
+  background:rgba(255,255,255,.06);
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:16px;
+  padding:32px 28px;
+  transition:all .3s ease;
+}
+
+.process-card:hover{
+  background:rgba(255,255,255,.09);
+  transform:translateY(-4px);
+}
+
+.process-number{
+  display:inline-block;
+  width:44px;
+  height:44px;
+  background:linear-gradient(135deg,#0b4fb0,#2b7be6);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:800;
+  font-size:18px;
+  margin-bottom:18px;
+}
+
+.process-card h4{
+  font-size:18px;
+  margin:0 0 10px;
+  font-weight:700;
+}
+
+.process-card p{
+  color:rgba(255,255,255,.8);
+  margin:0;
+  font-size:15px;
+  line-height:1.6;
+}
+
+/* ================= CTA ================= */
+
+.cta-dark{
+  background:#0b2540;
+  color:#fff;
+  padding:50px 0;
+}
+
+.cta-dark p{color:rgba(255,255,255,.75)}
+
+/* ================= CONTACT ================= */
+
+.contact-card{
+  background:#fff;
+  border-radius:16px;
+  padding:30px;
+  box-shadow:0 10px 30px rgba(11,37,64,.05);
+  display:grid;
+  grid-template-columns:1fr 380px;
+  gap:32px;
+}
+
+.contact-form{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.contact-form input{
+  padding:13px;
+  border-radius:10px;
+  border:1px solid #eef2f7;
+}
+
+.btn-primary.full{width:100%}
+
+.contact-foot{
+  grid-column:1/-1;
+  margin-top:12px;
+}
+
+/* ================= FOOTER ================= */
+
+.site-footer{
+  border-top:1px solid #eef1f4;
+  padding:28px 0;
+  text-align:center;
+}
+
+.small{
+  font-size:13px;
+  color:var(--muted);
+}
+
+/* ================= ANIMATIONS ================= */
+
+.reveal{
+  opacity:0;
+  transform:translateY(20px);
+  transition:all .6s cubic-bezier(.2,.9,.2,1);
+}
+
+.reveal.in-view{
+  opacity:1;
+  transform:none;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width:1100px){
+  .benefits-grid{grid-template-columns:repeat(2,1fr)}
+  .hero-grid{grid-template-columns:1fr}
+  .process-grid{grid-template-columns:1fr}
+}
+
+@media (max-width:980px){
+  .two-col{grid-template-columns:1fr}
+  .nav{display:none}
+  .mobile-toggle{display:block}
+
+  .nav.open{
+    display:flex;
+    position:absolute;
+    top:100%;
+    right:28px;
+    background:#fff;
+    padding:18px;
+    border-radius:14px;
+    box-shadow:0 10px 30px rgba(11,37,64,.08);
+    flex-direction:column;
+    gap:12px;
+  }
+
+  .contact-card{grid-template-columns:1fr}
+}
+
+@media (max-width:640px){
+  .container{padding:28px 20px}
+  .hero-left h1{font-size:28px}
+  .hero-images{grid-template-columns:1fr}
+  .benefits-grid{grid-template-columns:1fr}
+  .process-header h3{font-size:26px}
+  .process-grid{gap:20px}
+}
+  </style>
 </head>
 
 <body>
@@ -100,7 +511,7 @@
 
       <div class="benefits-grid">
         <div class="bento">
-          <h4>Pro Cleaning</h4>
+          <h4>Housekeeping Services</h4>
           <p>Your home is professionally cleaned after every stay.</p>
         </div>
         <div class="bento">
@@ -115,41 +526,50 @@
     </div>
   </section>
 
-  <!-- TIMELINE -->
-  <section id="timeline" class="section container timeline-section reveal">
-    <div class="timeline-grid">
-      <div class="timeline-col">
-        <div class="timeline-line" aria-hidden>
-          <div class="node">1</div><div class="spacer"></div>
-          <div class="node">2</div><div class="spacer"></div>
-          <div class="node">3</div><div class="spacer"></div>
-          <div class="node">4</div><div class="spacer"></div>
-          <div class="node">5</div><div class="spacer"></div>
-          <div class="node">6</div>
-        </div>
+  <!-- PROCESS -->
+  <section id="timeline" class="process-section reveal">
+    <div class="container">
+      <div class="process-header">
+        <h3>Expanding Across Prime European Markets</h3>
+        <p>We focus on high-demand tourist destinations while delivering exceptional property management and transparent profit-sharing to our partners.</p>
       </div>
 
-      <div class="content-col">
-        <h3>New Vision. Tireless Execution. Expanding Across Europe.</h3>
-        <p class="muted">
-          We focus on prime EU tourist hubs while preserving long-term asset value.
-        </p>
+      <div class="process-grid">
+        <div class="process-card">
+          <div class="process-number">1</div>
+          <h4>Property Onboarding</h4>
+          <p>We assess your property, agree on monthly rent, and prepare it for premium short-term listings.</p>
+        </div>
 
-        <hr class="hat-hr">
+        <div class="process-card">
+          <div class="process-number">2</div>
+          <h4>Marketing & Bookings</h4>
+          <p>Professional listings on major platforms with dynamic pricing and 24/7 guest communication.</p>
+        </div>
 
-        <h3>How it works — at a glance</h3>
-        <p class="muted">
-          Owners receive guaranteed rent plus profit participation with transparent reporting.
-        </p>
+        <div class="process-card">
+          <div class="process-number">3</div>
+          <h4>Guest Management</h4>
+          <p>Thorough screening, seamless check-ins, and proactive monitoring throughout each stay.</p>
+        </div>
 
-        <form class="mini-form" action="https://formspree.io/f/maypkljr" method="POST">
-          <input name="name" placeholder="Name" required>
-          <input name="email" placeholder="Email Address" type="email" required>
-          <input name="location" placeholder="Property Location" required>
-          <button class="btn-outline">Send inquiry</button>
-        </form>
+        <div class="process-card">
+          <div class="process-number">4</div>
+          <h4>Housekeeping & Maintenance</h4>
+          <p>Professional cleaning after every checkout plus routine maintenance and repairs as needed.</p>
+        </div>
 
-        <p><a href="mailto:rentovate@gmail.com">rentovate@gmail.com</a></p>
+        <div class="process-card">
+          <div class="process-number">5</div>
+          <h4>Financial Reporting</h4>
+          <p>Monthly statements showing your guaranteed rent plus your 12.5% share of net profits.</p>
+        </div>
+
+        <div class="process-card">
+          <div class="process-number">6</div>
+          <h4>Ongoing Partnership</h4>
+          <p>Regular property inspections, owner updates, and continuous optimization of your returns.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -159,7 +579,7 @@
     <div class="contact-card">
       <div class="contact-left">
         <h3>Let's talk.</h3>
-        <p class="muted">Tell us about your property and we’ll be in touch.</p>
+        <p class="muted">Tell us about your property and we'll be in touch.</p>
       </div>
 
       <form class="contact-form" action="https://formspree.io/f/maypkljr" method="POST">
