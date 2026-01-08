@@ -4,7 +4,7 @@
   --bg:#fff;
   --card:#f7f8fa;
   --accent:linear-gradient(90deg,#0b4fb0,#2b7be6);
-  --max:1320px;
+  --max:1200px;
   font-family:Inter,system-ui;
 }
 
@@ -14,22 +14,22 @@ body{
   margin:0;
   color:var(--ink);
   background:var(--bg);
-  line-height:1.55;
+  line-height:1.6;
 }
 
-/* -------------------------
+/* =====================
    LAYOUT
--------------------------- */
+===================== */
 
 .container{
   max-width:var(--max);
   margin:0 auto;
-  padding:64px 28px;
+  padding:72px 32px;
 }
 
-/* -------------------------
+/* =====================
    HEADER
--------------------------- */
+===================== */
 
 .site-header{
   position:sticky;
@@ -41,13 +41,14 @@ body{
 
 .header-inner{
   display:flex;
-  justify-content:space-between;
   align-items:center;
+  justify-content:space-between;
+  padding:16px 0;
 }
 
 .nav{
   display:flex;
-  gap:30px;
+  gap:36px;
 }
 
 .nav a{
@@ -59,145 +60,150 @@ body{
 .nav a.cta{
   background:var(--ink);
   color:#fff;
-  padding:10px 18px;
+  padding:10px 20px;
   border-radius:999px;
 }
 
-/* -------------------------
+/* =====================
    HERO
--------------------------- */
+===================== */
+
+.hero{
+  padding-top:64px;
+}
 
 .hero-grid{
   display:grid;
-  grid-template-columns:1.1fr .9fr;
-  gap:80px;
+  grid-template-columns:1.15fr 0.85fr;
+  gap:64px;
   align-items:center;
 }
 
+.hero-left{
+  max-width:560px;
+}
+
 .hero-left h1{
-  font-size:44px;
-  line-height:1.1;
+  font-size:52px;
+  line-height:1.08;
+  margin:0 0 20px;
+}
+
+.lede{
+  font-size:18px;
+  color:var(--muted);
+  max-width:520px;
 }
 
 .accent-line{
-  width:40px;
+  width:44px;
   height:4px;
   background:var(--accent);
-  margin-bottom:20px;
+  margin-bottom:22px;
 }
 
 .hero-images{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:18px;
+  gap:16px;
 }
 
 .hero-images img{
   width:100%;
+  height:100%;
   aspect-ratio:4/3;
   object-fit:cover;
-  border-radius:14px;
+  border-radius:16px;
 }
 
-/* -------------------------
-   METRICS
--------------------------- */
-
-.metrics{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:24px;
-  text-align:center;
-}
-
-.metric span{
-  font-size:36px;
-  font-weight:800;
-}
-
-.metric p{
-  color:var(--muted);
-  margin:6px 0 0;
-}
-
-/* -------------------------
+/* =====================
    SECTIONS
--------------------------- */
+===================== */
 
 .section{
-  padding:80px 0;
+  padding:96px 0;
 }
+
+.section-title{
+  font-size:32px;
+  margin-bottom:48px;
+}
+
+/* =====================
+   TWO COLUMN
+===================== */
 
 .two-col{
   display:grid;
-  grid-template-columns:1fr 420px;
-  gap:72px;
+  grid-template-columns:1fr 480px;
+  gap:80px;
   align-items:center;
 }
 
-/* -------------------------
+/* =====================
    BENEFITS / STANDARDS
--------------------------- */
+===================== */
 
 .benefits-grid,
 .standards-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:28px;
+  gap:32px;
 }
 
 .bento,
 .standard-card{
   background:var(--card);
-  padding:30px;
-  border-radius:16px;
+  padding:36px;
+  border-radius:18px;
 }
 
-.icon{
-  font-size:28px;
-  margin-bottom:10px;
+.bento h4,
+.standard-card h4{
+  margin-top:0;
 }
 
-/* -------------------------
+/* =====================
    CONTACT
--------------------------- */
+===================== */
 
 .contact-card{
   display:grid;
-  grid-template-columns:1fr 380px;
-  gap:32px;
+  grid-template-columns:1.2fr 420px;
+  gap:48px;
   align-items:start;
 }
 
 .contact-form{
   display:flex;
   flex-direction:column;
-  gap:12px;
+  gap:14px;
 }
 
 .contact-form input{
-  padding:14px;
-  border-radius:10px;
+  padding:16px;
+  border-radius:12px;
   border:1px solid #e6ecf4;
 }
 
-/* -------------------------
+/* =====================
    FOOTER
--------------------------- */
+===================== */
 
 .site-footer{
   text-align:center;
   border-top:1px solid #eef1f4;
+  padding:32px 0;
 }
 
-/* -------------------------
+/* =====================
    REVEAL
--------------------------- */
+===================== */
 
 .reveal{
   opacity:0;
-  transform:translateY(20px);
-  transition:.6s ease;
+  transform:translateY(24px);
+  transition:.7s ease;
 }
 
 .reveal.in-view{
@@ -205,20 +211,22 @@ body{
   transform:none;
 }
 
-/* =========================
-   RESPONSIVE FIXES
-   (THIS IS THE IMPORTANT PART)
-========================= */
+/* =====================
+   RESPONSIVE
+===================== */
 
-/* Tablets / small laptops */
-@media (max-width: 1100px){
+@media (max-width: 1024px){
   .hero-grid{
-    gap:48px;
+    grid-template-columns:1fr;
+  }
+
+  .hero-left{
+    max-width:none;
   }
 
   .two-col{
-    grid-template-columns:1fr 1fr;
-    gap:48px;
+    grid-template-columns:1fr;
+    gap:56px;
   }
 
   .benefits-grid,
@@ -226,42 +234,21 @@ body{
     grid-template-columns:repeat(2,1fr);
   }
 
-  .metrics{
-    grid-template-columns:repeat(3,1fr);
-  }
-}
-
-/* Tablets */
-@media (max-width: 900px){
-  .two-col{
-    grid-template-columns:1fr;
-  }
-
   .contact-card{
     grid-template-columns:1fr;
   }
-
-  .hero-left h1{
-    font-size:38px;
-  }
 }
 
-/* Phones */
 @media (max-width: 640px){
   .container{
-    padding:48px 20px;
+    padding:56px 20px;
   }
 
-  .hero-grid{
-    grid-template-columns:1fr;
-    gap:40px;
+  .hero-left h1{
+    font-size:34px;
   }
 
   .hero-images{
-    grid-template-columns:1fr;
-  }
-
-  .metrics{
     grid-template-columns:1fr;
   }
 
@@ -272,9 +259,5 @@ body{
 
   .nav{
     display:none;
-  }
-
-  .hero-left h1{
-    font-size:30px;
   }
 }
