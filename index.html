@@ -1,207 +1,136 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Rentovate — Rent smarter. Earn more.</title>
-  <meta name="description" content="Rentovate is a rent-arbitrage company that takes the stress off landlords: guaranteed agreed rent plus a share of short-term profits. We manage cleaning, maintenance and guest screening in prime European tourist locations." />
-
-  <meta property="og:title" content="Rentovate — Rent smarter. Earn more." />
-  <meta property="og:description" content="Guaranteed agreed rent + 12.5% of net profits. We manage cleaning, maintenance and high-quality guests in prime EU locations." />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1200&q=80" />
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary_large_image" />
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Rentovate — Transforming Rentals</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="site-header" id="top">
+  <header class="site-header">
     <div class="container header-inner">
-      <div class="brand">
-        <svg class="mark" width="36" height="36" viewBox="0 0 24 24" fill="none" aria-hidden>
-          <path d="M3 9L12 2L21 9V20A2 2 0 0 1 19 22H5A2 2 0 0 1 3 20V9Z" stroke="#0b2540" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M9 22V13H15V22" stroke="#0b2540" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <span class="brand-name">Rentovate</span>
-      </div>
-
-      <nav class="nav" role="navigation" aria-label="Main navigation">
-        <a href="#model">The Model</a>
-        <a href="#benefits">Benefits</a>
-        <a href="#timeline">How it Works</a>
-        <a href="#contact" class="cta">Contact</a>
+      <h1 class="logo">Rentovate</h1>
+      <nav class="main-nav">
+        <a href="#about">About</a>
+        <a href="#timeline">Timeline</a>
+        <a href="#contact">Contact</a>
       </nav>
-
-      <button class="mobile-toggle" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
     </div>
   </header>
 
   <main>
-    <section class="hero container">
-      <div class="hero-grid reveal">
-        <div class="hero-left">
-          <div class="accent-line" aria-hidden></div>
-          <h1>Unlock Europe's potential.</h1>
-          <p class="lede">Rentovate partners with landlords to deliver guaranteed agreed rent plus 12.5% of net profits from short‑term bookings — zero management headaches, full respect for your property.</p>
-          <p class="hero-actions"><a href="#contact" class="btn-primary">Partner With Us</a></p>
+    <section id="hero" class="hero container">
+      <div class="hero-inner">
+        <h2>Modern property management for the modern landlord</h2>
+        <p>We bring simple, scalable solutions to rental property teams across cities.</p>
+        <div class="hero-cta">
+          <a class="btn primary" href="#contact">Let's talk</a>
+          <a class="btn outline" href="#about">Learn more</a>
         </div>
+      </div>
+      <aside class="contact-card mobile-hide" aria-labelledby="contact-heading">
+        <h3 id="contact-heading">Let's talk</h3>
+        <p>Book a demo or reach out to our team for a quick consultation.</p>
+        <a class="btn primary" href="mailto:hello@rentovate.example">hello@rentovate.example</a>
+      </aside>
+    </section>
 
-        <div class="hero-right">
-          <div class="hero-images">
-            <img loading="lazy" src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1400&q=80" alt="European street" />
-            <img loading="lazy" src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1400&q=80" alt="European canal" />
+    <section id="about" class="container about">
+      <h2>About Rentovate</h2>
+      <p>We build software that makes rental operations predictable, measurable, and delightful.</p>
+    </section>
+
+    <section id="timeline" class="container timeline-section">
+      <h2>Our Journey</h2>
+      <p class="muted">Key milestones in Rentovate's development</p>
+
+      <ul class="timeline" role="list">
+        <li class="timeline-item">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-content">
+            <time datetime="2019-06">2019 — Founded</time>
+            <h3>Early product launch</h3>
+            <p>We launched our minimum viable product and onboarded our first customers.</p>
           </div>
-        </div>
+        </li>
+
+        <li class="timeline-item">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-content">
+            <time datetime="2020-09">2020 — Growth</time>
+            <h3>Scaling operations</h3>
+            <p>Expanded the team and built integrations to simplify property workflows.</p>
+          </div>
+        </li>
+
+        <li class="timeline-item">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-content">
+            <time datetime="2022-03">2022 — Product</time>
+            <h3>Feature-rich platform</h3>
+            <p>Introduced automation and reporting tools that reduced manual work for managers.</p>
+          </div>
+        </li>
+
+        <li class="timeline-item">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-content">
+            <time datetime="2025-11">2025 — Expansion</time>
+            <h3>Expanding Across Europe</h3>
+            <p>We opened new offices and started working with partners across multiple EU markets.</p>
+            <p class="timeline-cta"><a class="btn primary" href="#contact">Contact our EU team</a></p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="expansion" class="container cta-banner">
+      <div class="cta-inner">
+        <h2>Expanding Across Europe</h2>
+        <p>We're growing and looking for local partners. If you want to collaborate, let's connect.</p>
+        <a class="btn primary" href="#contact">Get in touch</a>
       </div>
     </section>
 
-    <section id="model" class="section container">
-      <div class="two-col reveal">
-        <div>
-          <h2>The Hybrid Model. <span class="muted-line">Your property, amplified.</span></h2>
-
-          <ol class="steps">
-            <li><strong>The Base:</strong> You receive an agreed monthly rent — stability and no vacancy risk.</li>
-            <li><strong>The Bonus:</strong> We share upside: you earn <strong>12.5% of our net profits</strong> from short‑term stays.</li>
-            <li><strong>Zero Fees:</strong> No management fees or hidden costs — we only win when you win.</li>
-          </ol>
-
-          <p class="muted small">We manage marketing, bookings, guest screening, professional cleaning, and routine maintenance — always respecting owner preferences and the property’s condition.</p>
+    <section id="contact" class="container contact-section">
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Let's talk</h3>
+          <p>Whether you're a landlord, investor, or operator — we'd love to hear from you.</p>
+          <ul class="contact-list">
+            <li>Email: <a href="mailto:hello@rentovate.example">hello@rentovate.example</a></li>
+            <li>Phone: <a href="tel:+441234567890">+44 1234 567 890</a></li>
+          </ul>
+          <a class="btn primary" href="mailto:hello@rentovate.example">Book a chat</a>
         </div>
 
-        <div class="image-grid">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=900&q=80" alt="Interior 1">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=900&q=80" alt="Interior 2">
-        </div>
+        <form class="contact-form" action="#" method="post" aria-label="Contact form">
+          <label>
+            <span class="label-text">Name</span>
+            <input type="text" name="name" required>
+          </label>
+          <label>
+            <span class="label-text">Email</span>
+            <input type="email" name="email" required>
+          </label>
+          <label>
+            <span class="label-text">Message</span>
+            <textarea name="message" rows="6" required></textarea>
+          </label>
+          <div class="form-actions">
+            <button class="btn primary" type="submit">Send message</button>
+          </div>
+        </form>
       </div>
     </section>
 
-    <section id="benefits" class="section light-bg">
-      <div class="container reveal">
-        <h3 class="section-title">Peace of mind, built‑in.</h3>
-
-        <div class="benefits-grid">
-          <div class="bento">
-            <h4>Pro Cleaning</h4>
-            <p>Your home is professionally cleaned after every stay — showroom condition all year.</p>
-          </div>
-          <div class="bento">
-            <h4>Total Maintenance</h4>
-            <p>Routine repairs and preventative upkeep to protect long‑term value.</p>
-          </div>
-          <div class="bento">
-            <h4>Curated Guests</h4>
-            <p>We screen guests and manage rules to ensure respectful stays and low risk.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="timeline" class="section container timeline-section reveal">
-      <div class="timeline-header">
-        <h2>New Vision. Tireless Execution.<br><span class="muted">Expanding Across Europe.</span></h2>
-        <p class="muted">We focus on prime EU tourist hubs and work hand‑in‑hand with owners to maximize stable income and upside while preserving the asset.</p>
-      </div>
-
-      <div class="timeline-wrap">
-        <!-- vertical track -->
-        <div class="timeline-track" aria-hidden>
-          <div class="track-line"></div>
-        </div>
-
-        <!-- steps -->
-        <ol class="timeline-steps">
-          <li class="timeline-step">
-            <div class="step-badge">1</div>
-            <div class="step-card">
-              <h4>Property Assessment & Photos</h4>
-              <p class="muted">We visit the property, document condition, and produce professional photography — then provide an accurate market valuation and earnings estimate.</p>
-            </div>
-          </li>
-
-          <li class="timeline-step">
-            <div class="step-badge">2</div>
-            <div class="step-card">
-              <h4>Custom Offer & Agreement</h4>
-              <p class="muted">We present a clear, written offer with an agreed base rent and transparent terms. You keep control — we only manage operations.</p>
-            </div>
-          </li>
-
-          <li class="timeline-step">
-            <div class="step-badge">3</div>
-            <div class="step-card">
-              <h4>Onboarding & Listing Optimization</h4>
-              <p class="muted">We prepare the home, add professional listings, set dynamic pricing, and optimize for maximum occupancy and nightly rates.</p>
-            </div>
-          </li>
-
-          <li class="timeline-step">
-            <div class="step-badge">4</div>
-            <div class="step-card">
-              <h4>Guest Management & Operations</h4>
-              <p class="muted">We handle bookings, communication, check‑ins/check‑outs, and 24/7 guest support to ensure a smooth stay and protect your property.</p>
-            </div>
-          </li>
-
-          <li class="timeline-step">
-            <div class="step-badge">5</div>
-            <div class="step-card">
-              <h4>Cleaning & Preventative Maintenance</h4>
-              <p class="muted">Professional cleaning after each stay, routine checks, and prompt repairs to maintain condition and long‑term value.</p>
-            </div>
-          </li>
-
-          <li class="timeline-step">
-            <div class="step-badge">6</div>
-            <div class="step-card">
-              <h4>Transparent Reporting & Payments</h4>
-              <p class="muted">You receive regular performance reports and on‑time payments: the agreed rent plus your share of net profits (we recommend monthly payouts).</p>
-            </div>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- rest unchanged -->
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <p class="muted small">© 2026 Rentovate — Rent smarter. Earn more. Operating in the European Union.</p>
+      <p>&copy; 2019–2026 Rentovate. All rights reserved.</p>
     </div>
   </footer>
 
-  <script>
-    // Mobile nav toggle
-    const toggle = document.querySelector('.mobile-toggle');
-    const nav = document.querySelector('.nav');
-    toggle && toggle.addEventListener('click', () => {
-      const open = nav.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', String(open));
-    });
-
-    // Reveal-on-scroll
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('in-view');
-      });
-    }, { threshold: 0.08 });
-
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    // Smooth anchors
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', (e)=>{
-        const href = a.getAttribute('href');
-        if(href.length>1){
-          e.preventDefault();
-          document.querySelector(href).scrollIntoView({behavior:'smooth'});
-        }
-      })
-    })
-  </script>
 </body>
 </html>
